@@ -36,19 +36,23 @@ function App() {
             flex: "0 0 100%",
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: "flex-start",
             padding: "10px"
           }}>
-            {/* Text Kiri */}
-            <div style={{ flex: 1, paddingRight: "10px" }}>
-              <div style={{ fontWeight: "bold", fontSize: "16px" }}>{p.title}</div>
-              <div style={{ color: "green", marginTop: 5 }}>{p.price}</div>
-            </div>
-
-            {/* Gambar Kanan */}
+            {/* Gambar Kiri */}
             <a href={p.link} target="_blank">
-              <img src={p.img} alt={p.title} style={{ maxWidth: 100, maxHeight: 100 }} />
+              <img src={p.img} alt={p.title} style={{
+                width: 90, height: 90, objectFit: "cover", borderRadius: "8px", marginRight: "15px"
+              }} />
             </a>
+
+            {/* Teks Kanan */}
+            <div style={{ flex: 1 }}>
+              <div style={{
+                fontWeight: "bold", fontSize: "16px", lineHeight: "1.3", marginBottom: "5px"
+              }}>{p.title}</div>
+              <div style={{ color: "green", fontWeight: "500" }}>{p.price}</div>
+            </div>
           </div>
         ))}
       </div>
