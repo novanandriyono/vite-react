@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
+  const products = [
+    {
+      title: "Headset Gaming XYZ",
+      price: "Rp150.000",
+      img: "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/07/31/sample1.jpg",
+      link: "https://tokopedia.link/affiliate1234"
+    },
+    {
+      title: "Keyboard Mechanical ABC",
+      price: "Rp350.000",
+      img: "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/07/31/sample2.jpg",
+      link: "https://tokopedia.link/affiliate5678"
+    },
+    {
+      title: "Mouse Gaming Ultra",
+      price: "Rp250.000",
+      img: "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/07/31/sample3.jpg",
+      link: "https://tokopedia.link/affiliate91011"
+    },
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div style={{
+      width: "600px", height: "200px", overflow: "hidden",
+      fontFamily: "sans-serif", borderRadius: "10px"
+    }}>
+      <div className="carousel-track" style={{
+        display: "flex",
+        transform: "translateX(0%)",
+        transition: "transform 0.5s ease-in-out",
+        animation: "slide 12s infinite"
+      }}>
+        {products.map((p, i) => (
+          <div key={i} style={{
+            flex: "0 0 100%", padding: "10px", background: "#fff", textAlign: "center"
+          }}>
+            <a href={p.link} target="_blank">
+              <img src={p.img} alt={p.title} style={{ maxWidth: 100, maxHeight: 100 }} />
+              <div style={{ fontWeight: "bold", fontSize: 16 }}>{p.title}</div>
+              <div style={{ color: "green", marginTop: 5 }}>{p.price}</div>
+            </a>
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {/* CSS Animation */}
+      <style>{`
+        @keyframes slide {
+          0%   { transform: translateX(0%); }
+          33%  { transform: translateX(-100%); }
+          66%  { transform: translateX(-200%); }
+          100% { transform: translateX(0%); }
+        }
+      `}</style>
+    </div>
+  );
 }
 
-export default App
+export default App;
