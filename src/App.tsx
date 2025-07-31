@@ -22,34 +22,41 @@ function App() {
 
   return (
     <div style={{
-      width: "600px", height: "200px", overflow: "hidden",
-      fontFamily: "sans-serif", borderRadius: "10px"
+      width: "600px", height: "120px", overflow: "hidden",
+      fontFamily: "sans-serif", borderRadius: "10px", background: "#fff"
     }}>
       <div className="carousel-track" style={{
         display: "flex",
         transform: "translateX(0%)",
         transition: "transform 0.5s ease-in-out",
-        animation: "slide 12s infinite"
+        animation: "slide 8s infinite"
       }}>
         {products.map((p, i) => (
           <div key={i} style={{
-            flex: "0 0 100%", padding: "10px", background: "#fff", textAlign: "center"
+            flex: "0 0 100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "10px"
           }}>
+            {/* Text Kiri */}
+            <div style={{ flex: 1, paddingRight: "10px" }}>
+              <div style={{ fontWeight: "bold", fontSize: "16px" }}>{p.title}</div>
+              <div style={{ color: "green", marginTop: 5 }}>{p.price}</div>
+            </div>
+
+            {/* Gambar Kanan */}
             <a href={p.link} target="_blank">
               <img src={p.img} alt={p.title} style={{ maxWidth: 100, maxHeight: 100 }} />
-              <div style={{ fontWeight: "bold", fontSize: 16 }}>{p.title}</div>
-              <div style={{ color: "green", marginTop: 5 }}>{p.price}</div>
             </a>
           </div>
         ))}
       </div>
 
-      {/* CSS Animation */}
       <style>{`
         @keyframes slide {
           0%   { transform: translateX(0%); }
-          33%  { transform: translateX(-100%); }
-          66%  { transform: translateX(-200%); }
+          50%  { transform: translateX(-100%); }
           100% { transform: translateX(0%); }
         }
       `}</style>
