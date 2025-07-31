@@ -22,46 +22,64 @@ function App() {
 
   return (
     <div style={{
-      width: "600px", height: "120px", overflow: "hidden",
-      fontFamily: "sans-serif", borderRadius: "10px", background: "#fff"
+      width: "600px",
+      height: "140px",
+      overflow: "hidden",
+      fontFamily: "sans-serif",
+      borderRadius: "10px",
+      background: "transparent" // <-- transparan untuk OBS
     }}>
       <div className="carousel-track" style={{
         display: "flex",
         transform: "translateX(0%)",
         transition: "transform 0.5s ease-in-out",
-        animation: "slide 8s infinite"
+        animation: "slide 12s infinite"
       }}>
         {products.map((p, i) => (
-          <div key={i} style={{
-            flex: "0 0 100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "10px"
-          }}>
-            {/* Gambar Kiri */}
-            <a href={p.link} target="_blank">
-              <img src={p.img} alt={p.title} style={{
-                width: 90, height: 90, objectFit: "cover", borderRadius: "8px", marginRight: "15px"
-              }} />
-            </a>
+          <a
+            key={i}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              flex: "0 0 100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              padding: "10px",
+              textDecoration: "none",
+              color: "inherit",
+              cursor: "pointer",
+              background: "rgba(255,255,255,0.85)", // opsional untuk kontras tulisan
+              borderRadius: "10px"
+            }}
+          >
+            <img src={p.img} alt={p.title} style={{
+              width: 90, height: 90, objectFit: "cover",
+              borderRadius: "8px", marginRight: "15px"
+            }} />
 
-            {/* Teks Kanan */}
             <div style={{ flex: 1 }}>
               <div style={{
-                fontWeight: "bold", fontSize: "16px", lineHeight: "1.3", marginBottom: "5px"
+                fontWeight: "bold", fontSize: "15px", lineHeight: "1.3", marginBottom: "6px"
               }}>{p.title}</div>
               <div style={{ color: "green", fontWeight: "500" }}>{p.price}</div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
       <style>{`
         @keyframes slide {
-          0%   { transform: translateX(0%); }
-          50%  { transform: translateX(-100%); }
+          0% { transform: translateX(0%); }
+          33.33% { transform: translateX(-100%); }
+          66.66% { transform: translateX(-200%); }
           100% { transform: translateX(0%); }
+        }
+
+        body {
+          margin: 0;
+          background-color: transparent;
         }
       `}</style>
     </div>
