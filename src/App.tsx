@@ -1,22 +1,22 @@
 function App() {
   const products = [
     {
-      title: "Headset Gaming XYZ",
-      price: "Rp150.000",
-      img: "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/07/31/sample1.jpg",
-      link: "https://tokopedia.link/affiliate1234"
+      title: "MILO ACTIV-GO Minuman Cokelat Berenergi Pouch 790g - NEB4K18",
+      price: "Rp89.775",
+      img: "https://images.tokopedia.net/img/cache/900/aphluv/1997/1/1/0ec3bc1ff1764f3bbb035afc05f4c238~.jpeg",
+      link: "https://tk.tokopedia.com/ZSSSmbg5v/"
     },
     {
-      title: "Keyboard Mechanical ABC",
-      price: "Rp350.000",
-      img: "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/07/31/sample2.jpg",
-      link: "https://tokopedia.link/affiliate5678"
+      title: "Keripik Singkong Chuba Balado Dan Keju 250 Gram - Balado",
+      price: "Rp15.675",
+      img: "https://images.tokopedia.net/img/cache/900/aphluv/1997/1/1/789c1ddac87248a0802e352e620bc48f~.jpeg",
+      link: "https://tk.tokopedia.com/ZSSSHoSma/"
     },
     {
-      title: "Mouse Gaming Ultra",
-      price: "Rp250.000",
-      img: "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/07/31/sample3.jpg",
-      link: "https://tokopedia.link/affiliate91011"
+      title: "COD Soes Coklat Cokelat",
+      price: "Rp31.350",
+      img: "https://images.tokopedia.net/img/cache/500-square/aphluv/1997/1/1/e960552df8dd4b41a9670508e0e5e250~.jpeg.webp?ect=4g",
+      link: "https://tk.tokopedia.com/ZSSS9Ja7V/"
     },
   ];
 
